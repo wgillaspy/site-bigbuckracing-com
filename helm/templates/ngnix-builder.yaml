@@ -1,0 +1,33 @@
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  name: application-nginx
+  namespace: {{.Values.namespace}}
+spec:
+  successfulBuildsHistoryLimit: 2
+  failedBuildsHistoryLimit: 2
+  source:
+    git:
+      ref: master
+      uri: 'git@github.com:wgillaspy/okd-hello-world.git'
+    sourceSecret:
+      name: "github-private-key"
+    type: Git
+  strategy:
+    type: Docker
+    dockerStrategy:
+      from:
+        kind: DockerImage
+        name: 'docker.io/nginxinc/nginx-unprivileged:latest'
+  output:
+    to:
+      kind: "DockerImage"
+      name: "docker.io/williamgillaspy/hello-world:latest"
+    pushSecret:
+      name: docker-push-secrets
+  triggers:
+    - type: ConfigChange
+    - type: "GitHub"
+      github:
+        secret: "github-private-key"
+  runPolicy: Serial
