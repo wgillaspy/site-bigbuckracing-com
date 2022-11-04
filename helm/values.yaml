@@ -4,6 +4,7 @@
 namespace: site-bigbuckracing-com
 
 frontend:
+  name: nginx-site-bigbuckracing-com
   route:
     path: site-bigbuckracing-com.apps.local.hlokd.com
     enabled: true
@@ -15,9 +16,13 @@ frontend:
     app.kubernetes.io/name: test-application-ngnix
   replicaCount: 1
   image:
-    repository: "docker.io/williamgillaspy/hello-world"
+    repository: "docker.io/williamgillaspy/site-bigbuckracing-com"
     pullPolicy: Always
     tag: "latest"
+  git:
+    repository: 'git@github.com:wgillaspy/site-bigbuckracing-com.git'
+    contextDir: build
+    branch: main
 
 service:
   type: ClusterIP

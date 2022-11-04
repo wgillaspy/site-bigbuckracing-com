@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: "{{ include "application.fullname" . }}-ngnix"
+  name: "{{ include "application.fullname" . }}-service"
   namespace: {{ template "application.namespace" . }}
   labels:
     {{- include "application.labels" . | nindent 4 }}

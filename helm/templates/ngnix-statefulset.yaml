@@ -22,7 +22,7 @@ spec:
       {{- end }}
       terminationGracePeriodSeconds: 30
       containers:
-        - name: "{{ .Chart.Name }}-ngnix"
+        - name: "{{ .Chart.Name }}"
           image: "{{ .Values.frontend.image.repository }}:{{ .Values.frontend.image.tag }}"
           imagePullPolicy: {{ .Values.frontend.image.pullPolicy }}
           securityContext:

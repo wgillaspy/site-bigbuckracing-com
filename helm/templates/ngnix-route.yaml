@@ -2,11 +2,11 @@
 apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
-  namespace: {{ template "test-application.namespace" . }}
+  namespace: {{ template "application.namespace" . }}
   labels:
-    app: {{ template "test-application.fullname" . }}
+    app: {{ template "application.fullname" . }}
     {{- if .Values.renderHelmLabels }}
-    "helm.sh/chart": "{{ template "test-application.label" .}}"
+    "helm.sh/chart": "{{ template "application.label" .}}"
     {{- end }}
     release: "{{ .Release.Name }}"
     heritage: "{{ .Release.Service }}"
@@ -17,7 +17,7 @@ metadata:
   annotations:
 {{ toYaml .Values.frontend.route.annotations | indent 4 }}
 {{- end }}
-  name: {{ template "test-application.fullname" . }}
+  name: {{ template "application.fullname" . }}
 spec:
   host: {{ .Values.frontend.route.path }}
   port:
@@ -27,7 +27,7 @@ spec:
     termination: edge
   to:
     kind: Service
-    name: {{ template "test-application.fullname" . }}
+    name: {{ template "application.fullname" . }}
     weight: 100
   wildcardPolicy: None
 {{- end }}
