@@ -17,7 +17,7 @@ spec:
   strategy:
     type: Docker
     dockerStrategy:
-      dockerfilePath: Dockerfile
+      dockerfilePath: build/Dockerfile
   output:
     to:
       kind: "DockerImage"
