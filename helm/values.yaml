@@ -22,7 +22,7 @@ frontend:
   git:
     repository: 'git@github.com:wgillaspy/site-bigbuckracing-com.git'
     contextDir: build
-    branch: main
+    branch: HEAD
 
 service:
   type: ClusterIP
