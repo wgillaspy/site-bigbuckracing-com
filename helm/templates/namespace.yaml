@@ -2,6 +2,7 @@ kind: Namespace
 apiVersion: v1
 metadata:
   name: {{.Values.namespace}}
-spec:
-  finalizers:
-    - kubernetes
+  annotations:
+    argocd.argoproj.io/sync-wave: "-1"
+  labels:
+    argocd.argoproj.io/managed-by: openshift-gitops
