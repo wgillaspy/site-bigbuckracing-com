@@ -21,7 +21,7 @@ spec:
   output:
     to:
       kind: "DockerImage"
-      name: "{{.Values.frontend.image.repository}}:{{.Values.frontend.image.tag}}"
+      name: {{.Values.frontend.image.repository}}:{{.Values.frontend.image.tag}}
     pushSecret:
       name: docker-push-pull-secret
   triggers:
