@@ -26,7 +26,7 @@ frontend:
 
 service:
   type: ClusterIP
-  port: 443 
+  port: 8080
 
 imagePullSecrets:
   - name: docker-push-pull-secret
