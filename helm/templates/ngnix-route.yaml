@@ -19,7 +19,7 @@ metadata:
 {{- end }}
   name: {{ template "application.fullname" . }}
 spec:
-  host: {{ .Values.frontend.route.path }}
+  host: {{ .Values.frontend.route.host }}
   port:
     targetPort: {{ .Values.frontend.containerPort }}
   tls:
@@ -29,5 +29,5 @@ spec:
     kind: Service
     name: {{ template "application.fullname" . }}-service
     weight: 100
-  wildcardPolicy: None
+  wildcardPolicy: Subdomain
 {{- end }}

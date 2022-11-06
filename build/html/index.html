@@ -1,9 +1,56 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="en">
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Big Buck Racing</title>
+    <script type="text/javascript">
+        function resizeIframe(iframe) {
+            iframe.height = (iframe.contentWindow.document.body.scrollHeight + 100)  + "px";
+        }
+        function goToPage(page) {
+            document.getElementById('page_content').src=page;
+        }
+    </script>
 </head>
+
+<link type="text/css" href="css/site.css" rel="stylesheet" />
+
 <body>
-<h1>Big Buck Racing</h1>
+<span class="lift:ManagerJson"></span>
+<div id="container" class="clearfix">
+    <div id="zone-header">
+        &nbsp;
+    </div>
+    <div id="zone-logo" class="clearfix">
+        <img src="images/logo_with_label.jpg" alt="Big Buck Racing Title Image and Logo">
+    </div>
+    <div id="zone-content-menu" class="clearfix">
+        <br/><br/>
+        <ul>
+            <li><a onclick="goToPage('pages/the_course.html')">The Course</a></li>
+            <li><a onclick="goToPage('pages/directions.html')">Directions</a></li>
+            <li><a onclick="goToPage('pages/big_buck_history.html')">Big Buck History</a></li>
+            <li><a onclick="goToPage('pages/local_points_of_interest.html')">Local Points of Interest</a></li>
+            <li><a onclick="goToPage('pages/wife_access.html')">Wifi Access</a></li>
+        </ul>
+    </div>
+    <div id="zone-content" class="clearfix">
+        <div id="content-main">
+            <br/>
+
+            <iframe width="100%" id="page_content" style="overflow:hidden;" onload="resizeIframe(this)" title="Page Body" src="pages/the_course.html"></iframe>
+        </div>
+    </div>
+    <div id="zone-footer" class="clearfix">
+
+        <ul class="menu">
+            <li class="first expanded">
+                <span class="nolink">Copyright 2022</span>
+            </li>
+        </ul>
+
+    </div>
+</div>
 </body>
 </html>
+
