@@ -23,6 +23,9 @@ frontend:
     repository: 'git@github.com:wgillaspy/site-bigbuckracing-com.git'
     contextDir: build
     branch: HEAD
+  securityContext:
+    runAsUser: 1000730001
+    runAsNonRoot: true
 
 service:
   type: ClusterIP
