@@ -1,4 +1,4 @@
-FROM nginxinc/nginx-unprivileged:latest
+FROM docker.io/nginxinc/nginx-unprivileged:latest
 
-COPY html/index.html /usr/share/nginx/html/index.html
+COPY html/ /usr/share/nginx/html/
 
