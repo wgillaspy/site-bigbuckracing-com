@@ -27,7 +27,7 @@ spec:
     termination: edge
   to:
     kind: Service
-    name: {{ template "application.fullname" . }}
+    name: {{ template "application.fullname" . }}-service
     weight: 100
   wildcardPolicy: None
 {{- end }}
