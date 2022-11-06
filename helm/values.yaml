@@ -23,6 +23,8 @@ frontend:
     repository: 'git@github.com:wgillaspy/site-bigbuckracing-com.git'
     contextDir: build
     branch: HEAD
+  securityContext:
+    enabled: false
 
 service:
   type: ClusterIP
