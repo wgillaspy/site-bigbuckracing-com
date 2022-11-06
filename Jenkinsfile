@@ -18,7 +18,7 @@ pipeline {
                         sh """
                            oc login  --token=${OC_TOKEN} --server=${OC_API_HOST}
                            oc start-build nginx-site-bigbuckracing-com-build -n site-bigbuckracing-com -F
-                           oc rollout restart statefulset/site-bigbuckracing-com-ngnix -n site-bigbuckracing-com
+                           oc rollout restart statefulset/site-bigbuckracing-com-ngnix -n site-bigbuckracing-com --insecure-skip-tls-verify
                         """
                     }
                 }
