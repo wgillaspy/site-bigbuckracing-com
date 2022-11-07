@@ -4,10 +4,6 @@ pipeline {
         label 'jenkins-jenkins-agent'
     }
 
-//    triggers {
-//        pollSCM('H/15 * * * *')
-//    }
-
     options {
         disableConcurrentBuilds()
         quietPeriod(0)
