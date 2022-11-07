@@ -6,4 +6,4 @@
 HTML files can be found in /build/html
 
 #### [Deployment]
-PRs to main will be built on demand.
+PRs to main will be built on merge.
