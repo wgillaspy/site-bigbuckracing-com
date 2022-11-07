@@ -17,6 +17,10 @@ html {
 	vertical-align: baseline;
 }
 
+.content-main {
+	padding: 10px;
+}
+
 a {
 	text-decoration: none;
 	color: #5e734e;
