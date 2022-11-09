@@ -4,6 +4,10 @@ pipeline {
         label 'jenkins-jenkins-agent'
     }
 
+    triggers {
+        cron('H 1 * * 7')
+    }
+
     options {
         disableConcurrentBuilds()
         quietPeriod(0)
