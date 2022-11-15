@@ -3,13 +3,20 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Big Buck Racing</title>
-    <script type="text/javascript">
-        function resizeIframe(iframe) {
-            iframe.height = (iframe.contentWindow.document.body.scrollHeight + 100)  + "px";
-        }
+    <script type="application/javascript">
+
         function goToPage(page) {
             document.getElementById('page_content').src=page;
         }
+
+        function resizeIframe(iframe) {
+            iframe.height = (iframe.contentWindow.document.body.scrollHeight + 100)  + "px";
+        }
+
+        window.addEventListener('DOMContentLoaded', function(e) {
+            const iframe = document.getElementById( 'page_content_iframe' );
+            resizeIframe( iframe );
+        } );
     </script>
 </head>
 
@@ -38,7 +45,7 @@
         <div id="content-main">
             <br/>
 
-            <iframe width="100%" height="600px" id="page_content" style="overflow:hidden;" onload="resizeIframe(this)" title="Page Body" src="pages/the_course.html"></iframe>
+            <iframe width="100%" height="600px" id="page_content_iframe" title="Page Body" src="pages/the_course.html"></iframe>
         </div>
     </div>
     <div id="zone-footer" class="clearfix">
