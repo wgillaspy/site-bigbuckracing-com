@@ -22,7 +22,7 @@ frontend:
   git:
     repository: 'git@github.com:wgillaspy/site-bigbuckracing-com.git'
     contextDir: build
-    branch: HEAD
+    branch: feature/newsite
   securityContext:
     runAsUser: 1000730001
     runAsNonRoot: true
