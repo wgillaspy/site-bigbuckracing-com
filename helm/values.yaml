@@ -24,7 +24,7 @@ frontend:
     contextDir: build
     branch: feature/newsite
   securityContext:
-    runAsUser: 1000730001
+    runAsUser: 1000630000
     runAsNonRoot: true
 
 service:
